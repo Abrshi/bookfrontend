@@ -1,0 +1,64 @@
+.outer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.firstDiv{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto; 
+  align-items: center;
+  justify-content: center;
+
+}
+/* Container for the entire PDF display */
+.fileContainer {
+    max-width: 300px;
+    margin: 20px ;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fefff2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for the course title */
+  .fileContainer h2 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Container for PDF details */
+  .fileDetails {
+    margin-bottom: 20px;
+  }
+  
+  /* Individual detail items (PDF title, file type, download link) */
+  .detailItem {
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  /* Download link styling */
+  .downloadLink {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .downloadLink:hover {
+    text-decoration: underline;
+  }
+  
+  /* PDF Viewer - iframe for displaying the actual PDF */
+  .fileViewer {
+    margin-top: 20px;
+  }
+  
+  .fileViewer iframe {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  

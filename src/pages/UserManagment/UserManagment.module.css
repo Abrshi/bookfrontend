@@ -1,0 +1,39 @@
+/* Styling for the user container */
+.userContainer {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 700px;
+  }
+  
+  /* Styling for user details */
+  .userDetail {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+    /* border: 1px solid #252525; */
+  }
+  
+  
+  /* Styling for empty state message */
+  .noUsers {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-top: 20px;
+  }
+  
+  /* Error message styling */
+  .errorMessage {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+  }
+  

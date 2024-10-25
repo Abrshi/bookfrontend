@@ -1,0 +1,1 @@
+npm i bcryptjs cookie-parser cors helmet joi jsonwebtoken nodemailer

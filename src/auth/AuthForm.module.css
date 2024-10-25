@@ -1,0 +1,109 @@
+/* Container to center the auth box */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+  padding: 20px;
+}
+
+/* Auth box styling (used for both login and signup) */
+.authBox {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Title */
+.authBox h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input group for spacing between label and input */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Label styling */
+label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Input field styling */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Input hover and focus state */
+input:focus {
+  border-color: #00ff08;
+}
+
+/* Submit button */
+.btn {
+  padding: 14px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: #3c8b40;
+}
+
+/* Toggle text for switching between login and signup */
+.toggleText {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Link to toggle between login and signup */
+.toggleLink {
+  color: #4CAF50;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.toggleLink:hover {
+  text-decoration: underline;
+}
+.sucss{
+  color: rgba(255, 55, 55, 0.795);
+  font-size: large;
+}
+.errer{
+  color:rgba(36, 255, 36, 0.815);
+  font-size: large;
+}

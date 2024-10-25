@@ -1,0 +1,61 @@
+/* UploadForm.module.css */
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  /* height: 900px; */
+  margin: 150px auto 50px  ;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.inputFocus:focus {
+  outline: none;
+  border-color: #00ff00;
+}
+
+.button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttonHover:hover {
+  background-color: #3c8b40;
+}
+
+.buttonActive:active {
+  background-color: #007a00;
+}
+
+@media (max-width: 500px) {
+  .form {
+    width: 100%;
+    padding: 15px;
+  }
+}

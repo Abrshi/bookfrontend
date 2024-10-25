@@ -1,0 +1,60 @@
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-height: 100px;
+  }
+  
+  .logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navLinks li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .navLinks li a:hover {
+    text-decoration: underline;
+  }
+  .profileContainer {
+    position: relative; /* Ensure the container is positioned */
+  }
+  
+  .profileDiv {
+    height: 300px;
+    width: 300px;
+    margin: 0 60% 0 0 ;
+    /* padding: 5px; */
+    background-color: rgb(238, 238, 238);
+    border: 1px solid rgb(116, 74, 74);
+    border-radius: 5px;
+    position: absolute;
+     /* top: 100%;  */
+    /* left: 0; */
+    z-index: 1000;
+    display: none;
+  }
+  
+.profileDiv:hover {
+    display: block;
+  }
+  .profile:hover + .profileDiv {
+    display: block;
+  }
+  

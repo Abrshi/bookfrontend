@@ -1,0 +1,13 @@
+.container {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    border-radius: 5px;
+  }
+  
+  .message {
+    font-size: 18px;
+    font-weight: bold;
+  }
