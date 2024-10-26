@@ -13,6 +13,7 @@ function routing() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/auth" element={<AuthPage />} />
+        <Route path="/feverite" element={<AuthPage />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
       <Footer />

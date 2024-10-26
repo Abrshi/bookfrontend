@@ -3,11 +3,9 @@ import styles from './AuthForm.module.css';
 import axiosInstance from '../api/axios';
 import { AuthContext } from '../auth/AuthContext';
 
-
 function AuthForm() {
-  const { login, addrole,addid,user,role,id} = useContext(AuthContext);
-
-
+  const { login, addrole, addid, user, role, id } = useContext(AuthContext);
+  
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,10 +13,10 @@ function AuthForm() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [signupSucss, setSignupSucss] = useState(null);
   const [signupSucssMsg, setSignupSucssMsg] = useState('');
+  console.log(axiosInstance);
   
   const toggleForm = () => {
     setIsLogin(!isLogin);
-    // Reset form state when toggling
     setEmail('');
     setPassword('');
     setName('');
@@ -28,49 +26,44 @@ function AuthForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isLogin) {
-      // Handle login logic
       try {
-      const response = await axiosInstance.post('/login', {  email, password });
-      console.log('Login:', response.data);
-      login(response.data.username)
-      addrole(response.data.role)
-      addid(response.data.user_id)
-      setSignupSucssMsg('login sucsses')
-      console.log('Login:',user,id,role);
-      
-      
-        
+        const response = await axiosInstance.post('/login', { email, password });
+    
+        login(response.data.username);
+        addrole(response.data.role);
+        addid(response.data.user_id);
+        setSignupSucss(true);
+        setSignupSucssMsg('Login success');
+        console.log('Login:', user, id, role);
       } catch (error) {
-        console.error('Error during signup:', error);
-        setSignupSucss(false)
-      setSignupSucssMsg('no:-(   no:-(   no:-( !')
+        console.error('Error during login:', error);
+        console.error('Response:', error.response);
+        console.error('Request:', error.request);
+        console.error('Message:', error.message);
+        setSignupSucss(false);
+        setSignupSucssMsg('Login failed!');
       }
-
-
-
-
-
-
+      
     } else {
-      // Handle sign-up logic
       if (password !== confirmPassword) {
         alert('Passwords do not match');
         return;
-      }else{
+      } else {
         try {
           const response = await axiosInstance.post('/register', { name, email, password });
           console.log('Signup successful', response.data);
-          setSignupSucss(true)
-          setSignupSucssMsg('account created :)')
-          console.log(response.data.message);
-          
-          setIsLogin(!isLogin);
+          setSignupSucss(true);
+          setSignupSucssMsg('Account created successfully!');
+          setIsLogin(true);
         } catch (error) {
-          console.error('Error during signup:');
-          setSignupSucss(false)
-          setSignupSucssMsg(error.message)
-          
+          console.error('Error during signup:', error);
+          console.error('Response:', error.response);
+          console.error('Request:', error.request);
+          console.error('Message:', error.message);
+          setSignupSucss(false);
+          setSignupSucssMsg('signup failed!');
         }
+        
       }
     }
   };
@@ -134,11 +127,9 @@ function AuthForm() {
               />
             </div>
           )}
-        <small className={signupSucss ? styles.errer : styles.sucss}>
-  {signupSucssMsg}
-</small>
-
-
+          <small className={signupSucss ? styles.sucss : styles.error}>
+            {signupSucssMsg}
+          </small>
           <button type="submit" className={styles.btn}>
             {isLogin ? 'Log In' : 'Sign Up'}
           </button>
@@ -150,8 +141,6 @@ function AuthForm() {
           </span>
         </p>
       </div>
-
-      
     </div>
   );
 }
