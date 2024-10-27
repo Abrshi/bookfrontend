@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import styles from './AuthForm.module.css';
 import axiosInstance from '../api/axios';
 import { AuthContext } from '../auth/AuthContext';
-
+import {OrbitProgress} from 'react-loading-indicators'
 function AuthForm() {
   const { login, addrole, addid, user, role, id } = useContext(AuthContext);
   
@@ -13,7 +13,10 @@ function AuthForm() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [signupSucss, setSignupSucss] = useState(null);
   const [signupSucssMsg, setSignupSucssMsg] = useState('');
-  console.log(axiosInstance);
+  // fr log in and sugn up loding
+  const [loding, setLoding] = useState(false);
+
+ 
   
   const toggleForm = () => {
     setIsLogin(!isLogin);
@@ -25,6 +28,7 @@ function AuthForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoding(true)
     if (isLogin) {
       try {
         const response = await axiosInstance.post('/login', { email, password });
@@ -50,6 +54,7 @@ function AuthForm() {
         return;
       } else {
         try {
+          
           const response = await axiosInstance.post('/register', { name, email, password });
           console.log('Signup successful', response.data);
           setSignupSucss(true);
@@ -66,6 +71,7 @@ function AuthForm() {
         
       }
     }
+    setLoding(false)
   };
 
   return (
@@ -130,6 +136,9 @@ function AuthForm() {
           <small className={signupSucss ? styles.sucss : styles.error}>
             {signupSucssMsg}
           </small>
+          {loding? (<small >
+            <OrbitProgress color="#32cd32" size="small" text="" textColor="" />
+          </small>):''}
           <button type="submit" className={styles.btn}>
             {isLogin ? 'Log In' : 'Sign Up'}
           </button>
