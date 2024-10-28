@@ -6,23 +6,59 @@ import axiosInstance from '../../api/axios';
 function Files() {
   const [materials, setMaterials] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
-
+  const [department, setDepartment] = useState('');
+  const [dipartmentslist,setDipartmentslist] =useState('')
+  console.log(department);
+  
   useEffect(() => {
     const fetchMaterials = async () => {
-      try {
-        const response = await axiosInstance.get('/materials');
-        setMaterials(response.data);
-      } catch (error) {
-        console.error('Error fetching materials:', error);
-        setErrorMessage('Failed to load materials. Please try again later.');
-      }
+        try {
+            const response = await axiosInstance.get(`/materials?department=${department}`);
+            setMaterials(response.data);
+        } catch (error) {
+            console.error('Error fetching materials:', error);
+            setErrorMessage('Failed to load materials. Please try again later.');
+        }
     };
 
     fetchMaterials();
-  }, []);
+}, [department]);
+
+// department********************
+useEffect(() => {
+  const fetchDipartment = async () => {
+    try {
+      const response = await axiosInstance.get('/dipartments');
+      setDipartmentslist(response.data);
+    } catch (error) {
+      console.error('Error fetching dipartments:', error);
+    }
+  };
+
+  fetchDipartment();
+}, []);
+console.log(dipartmentslist);
 
   return (
+    <>
+    <div className={styles.dipartments}>
+    <h2>Select a Department</h2>
+    {dipartmentslist.length > 0 ? (
+      <ul className={styles.dipartmentsList}>
+        {dipartmentslist.map((dep) => (
+          <li key={dep.department_id} onClick={() => setDepartment(dep.department_id)}>
+            {dep.department_name}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>No departments available.</p>
+    )}
+
+
+  </div>
       <div className={styles.firstDiv}>
+
       {errorMessage && <p className={styles.error}>{errorMessage}</p>}
       {materials.length > 0 ? (
         materials.map((material) => (
@@ -46,6 +82,7 @@ function Files() {
         <p>No materials available.</p>
       )}
     </div>
+    </>
    
   );
 }

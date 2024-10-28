@@ -62,3 +62,28 @@
     border-radius: 8px;
   }
   
+ .dipartmentsList{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    border: 1px solid #333;
+  
+  }
+
+
+.dipartmentsList > li {
+  border: 1px solid transparent; 
+    padding: 10px; 
+    
+  background-color: transparent; 
+    transition: border-color 0.3s; 
+}
+
+.dipartmentsList > li:hover {
+  border: 1px solid ; 
+    border-color: #333; 
+    cursor: pointer;
+}
+.dipartmentsList > li:active {
+  background-color: #f0f0f0; 
+}

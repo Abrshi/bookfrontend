@@ -107,3 +107,10 @@ input:focus {
   color:rgba(36, 255, 36, 0.815);
   font-size: large;
 }
+.mainContent {
+  flex-grow: 1;
+  padding: 20px;
+  text-align: center;
+  /* height: 500px; */
+  /* background-image: url(../../img/image.png); */
+}

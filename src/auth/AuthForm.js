@@ -76,6 +76,13 @@ function AuthForm() {
 
   return (
     <div className={styles.container}>
+
+<main className={styles.mainContent}>
+        <h1>Welcome to the CS Resources Portal</h1>
+        <p>Find all the study materials and resources you need for your Computer Science degree.</p>
+      </main>
+
+
       <div className={styles.authBox}>
         <h2>{isLogin ? 'Log In' : 'Sign Up'}</h2>
         <form className={styles.form} onSubmit={handleSubmit}>
