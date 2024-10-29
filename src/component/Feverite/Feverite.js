@@ -3,6 +3,7 @@ import axios from 'axios'; // Make sure to import axios
 import styles from '../Files/Files.module.css';
 import axiosInstance from '../../api/axios';
 import { AuthContext } from '../../auth/AuthContext';
+import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
 
 function Files() {
     const { id } = useContext(AuthContext); // Get user ID from AuthContext
@@ -86,7 +87,7 @@ function Files() {
                                 </a>
 
                                 <button onClick={() => removeFavorite(material, id)} className={styles.favoriteButton}>
-                       Remove from feverite
+                                <BookmarkRemoveIcon/>;
                           </button>
                             </div>
                         </div>

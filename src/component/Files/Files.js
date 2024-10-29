@@ -3,7 +3,7 @@ import axios from 'axios'; // Make sure to import axios
 import styles from './Files.module.css';
 import axiosInstance from '../../api/axios';
 import { AuthContext } from '../../auth/AuthContext';
-
+import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 function Files() {
 
   const {id } = useContext(AuthContext);
@@ -114,7 +114,7 @@ return (
                   Download PDF
                 </a>
                 <button onClick={() => addToFavorite(material, id)} className={styles.favoriteButton}>
-                       Add to feverite
+                <BookmarkAddIcon/>
                           </button>
 
                    </div>
