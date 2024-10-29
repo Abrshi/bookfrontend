@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios'; // Make sure to import axios
 import styles from './Files.module.css';
 import axiosInstance from '../../api/axios';
+import { AuthContext } from '../../auth/AuthContext';
 
 function Files() {
+
+  const {id } = useContext(AuthContext);
+
   const [materials, setMaterials] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [department, setDepartment] = useState('');
@@ -37,9 +41,46 @@ useEffect(() => {
 
   fetchDipartment();
 }, []);
-console.log(dipartmentslist);
+// console.log(dipartmentslist);
+// /////////////////////////////add to feverite
 
-  return (
+const [favoritesErr , setFavoritesErr]=useState('')
+const [favorites , setFavorites]=useState('')
+
+const addToFavorite = async (mid, uid) => {
+  console.log(mid.material_id, uid.id);
+
+  try {
+    // Post request with JSON data
+    const response = await axiosInstance.post('/favorites', { material_id: mid.material_id, user_id: uid.id });
+    
+    const successMessage = 'Favorites added successfully';
+    setFavorites(successMessage);
+    setFavoritesErr('');
+
+    
+    setTimeout(() => {
+      setFavorites(''); // Clear the message after 3 seconds
+    }, 3000);
+  } catch (error) {
+    console.error('Error during upload:', error);
+    
+    const errorMessage = 'Failed to add to favorites';
+    setFavorites('');
+    setFavoritesErr(errorMessage);
+
+    
+
+    setTimeout(() => {
+      setFavoritesErr(''); // Clear the error message after 3 seconds
+    }, 3000);
+  }
+};
+
+
+// 
+
+return (
     <>
     <div className={styles.dipartments}>
     <h2>Select a Department</h2>
@@ -69,19 +110,28 @@ console.log(dipartmentslist);
                 <strong>File Type : </strong> <span>{material.file_type || ' Unknown'}</span>
               </div>
               <div className={styles.detailItem}>
-                <strong>Download File:</strong>{' '}
-                <a href={material.file_path} target="_blank" rel="noopener noreferrer" className={styles.downloadLink}>
+                <a href={material.file_path} target="_blank" rel="noopener noreferrer" className={styles.favoriteButton}>
                   Download PDF
                 </a>
-              </div>
+                <button onClick={() => addToFavorite(material, id)} className={styles.favoriteButton}>
+                       Add to feverite
+                          </button>
+
+                   </div>
             </div>
-            
+         
           </div>
         ))
       ) : (
         <p>No materials available.</p>
       )}
     </div>
+    <div
+  className={`${styles.addtofevdiv} ${favorites ? styles.success : favoritesErr ? styles.error : ''}`}
+>
+  {favorites || favoritesErr || ''}
+</div>
+
     </>
    
   );

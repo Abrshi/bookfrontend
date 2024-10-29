@@ -11,7 +11,8 @@ const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.logo}>CS Resources</div>
         <ul className={styles.navLinks}>
-          <li><Link to="/">Home</Link></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/feverite">feverite</Link></li>
           <li>{user && role.role === 'admin' ? <Link to="/admin">Admin</Link> : ''}</li>
           <li className={styles.profileContainer}>
             <div className={styles.profile}>

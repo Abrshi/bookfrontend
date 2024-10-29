@@ -5,6 +5,7 @@ import AuthPage from './auth/AuthForm';
 import Footer from './component/Footer/Footer';
 import Navbar from './component/Navbar/Navbar';
 import AdminPage from './component/AdminPage/AdminPage';
+import Feverite from './component/Feverite/Feverite'
 
 function routing() {
   return (
@@ -13,7 +14,7 @@ function routing() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/auth" element={<AuthPage />} />
-        <Route path="/feverite" element={<AuthPage />} />
+        <Route path="/feverite" element={<Feverite />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
       <Footer />

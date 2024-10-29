@@ -85,5 +85,57 @@
     cursor: pointer;
 }
 .dipartmentsList > li:active {
-  background-color: #f0f0f0; 
+  background-color: transparent; 
+}
+/* /////////////////////////////////////////faverite button */
+.favoriteButton {
+  text-decoration: none;
+  background-color: transparent; 
+  color: #333; /* White text */
+  border: 2px solid transparent; /* Transparent border for a smooth effect */
+  padding: 5px 13px;
+  margin-left: 2px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  outline: none; /* Remove outline on focus */
+}
+
+.favoriteButton:hover {
+  background-color: transparent;
+  border: 2px solid #fff; /* White border on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.favoriteButton:active {
+  transform: scale(0.95); /* Slightly decrease size on click */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+/* ////////////////////////////////// */
+.addtofevdiv {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  display: none; /* Hidden by default */
+  text-align: center;
+  max-width: 80%;
+}
+
+.addtofevdiv.success {
+  background-color: #d4edda; /* Light green for success */
+  color: #14832e;
+  display: block;
+}
+
+.addtofevdiv.error {
+  background-color: #f8d7da; /* Light red for error */
+  color: #8f1421;
+  display: block;
 }
