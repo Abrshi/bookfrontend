@@ -3,7 +3,8 @@ import axios from 'axios'; // Make sure to import axios
 import styles from './Files.module.css';
 import axiosInstance from '../../api/axios';
 import { AuthContext } from '../../auth/AuthContext';
-import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
+import { FaFileDownload } from "react-icons/fa";
+import { MdBookmarkAdded } from "react-icons/md";
 function Files() {
 
   const {id } = useContext(AuthContext);
@@ -110,11 +111,11 @@ return (
                 <strong>File Type : </strong> <span>{material.file_type || ' Unknown'}</span>
               </div>
               <div className={styles.detailItem}>
-                <a href={material.file_path} target="_blank" rel="noopener noreferrer" className={styles.favoriteButton}>
-                  Download PDF
+                <a href={material.file_path} target="_blank" rel="noopener noreferrer" className={`${styles.favoriteButton} dounload`}>
+                <FaFileDownload />
                 </a>
-                <button onClick={() => addToFavorite(material, id)} className={styles.favoriteButton}>
-                <BookmarkAddIcon/>
+                <button onClick={() => addToFavorite(material, id)} className={`${styles.favoriteButton} favorite`}>
+                <MdBookmarkAdded />
                           </button>
 
                    </div>

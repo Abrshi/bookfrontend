@@ -3,8 +3,8 @@ import axios from 'axios'; // Make sure to import axios
 import styles from '../Files/Files.module.css';
 import axiosInstance from '../../api/axios';
 import { AuthContext } from '../../auth/AuthContext';
-import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
-
+import { FaFileDownload } from "react-icons/fa";
+import { CiBookmarkRemove } from "react-icons/ci";
 function Files() {
     const { id } = useContext(AuthContext); // Get user ID from AuthContext
     const [favoritesErr, setFavoritesErr] = useState('');
@@ -81,13 +81,13 @@ function Files() {
                                     href={material.file_path} 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className={styles.favoriteButton}
+                                    className={`${styles.favoriteButton} dounload`}
                                 >
-                                    Download PDF
+                                   <FaFileDownload size={40}/>
                                 </a>
 
-                                <button onClick={() => removeFavorite(material, id)} className={styles.favoriteButton}>
-                                <BookmarkRemoveIcon/>;
+                                <button onClick={() => removeFavorite(material, id)} className={`${styles.favoriteButton} favorite`}>
+                                <CiBookmarkRemove />
                           </button>
                             </div>
                         </div>

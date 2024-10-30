@@ -91,27 +91,32 @@
 .favoriteButton {
   text-decoration: none;
   background-color: transparent; 
-  color: #333; /* White text */
+ 
   border: 2px solid transparent; /* Transparent border for a smooth effect */
   padding: 5px 13px;
   margin-left: 2px;
-  font-size: 15px;
+  font-size: 23px;
   font-weight: bold;
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.4s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   outline: none; /* Remove outline on focus */
+  color:rgb(68, 165, 68);
 }
-
+.favorite{
+  color:rgb(68, 165, 68);
+}
+.download{
+  color: rgb(84, 84, 255) !important;
+}
 .favoriteButton:hover {
   background-color: transparent;
   border: 2px solid #fff; /* White border on hover */
-  transform: scale(1.05); /* Slightly increase size on hover */
+  transform: scale(1.2); /* Slightly increase size on hover */
 }
 
 .favoriteButton:active {
-  transform: scale(0.95); /* Slightly decrease size on click */
+  transform: scale(0.8); /* Slightly decrease size on click */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 /* ////////////////////////////////// */
