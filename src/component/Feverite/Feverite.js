@@ -83,7 +83,8 @@ function Files() {
                                     rel="noopener noreferrer" 
                                     className={`${styles.favoriteButton} dounload`}
                                 >
-                                   <FaFileDownload size={40}/>
+                                   <FaFileDownload color="rgb(84, 84, 255)" />
+
                                 </a>
 
                                 <button onClick={() => removeFavorite(material, id)} className={`${styles.favoriteButton} favorite`}>

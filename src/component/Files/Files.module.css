@@ -62,13 +62,44 @@
     border-radius: 8px;
   }
   
- .dipartmentsList{
+ /* .dipartmentsList{
     display: flex;
     list-style: none;
     gap: 20px;
-    border: 1px solid #333;
+    overflow-x: scroll;
   
-  }
+  } */
+  .dipartmentsList {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    overflow-x: auto; /* 'auto' instead of 'scroll' for cleaner overflow behavior */
+    scroll-behavior: smooth; /* Adds smooth scrolling effect */
+    padding: 10px; /* Optional: adds some padding to the scroll area */
+}
+
+/* Custom scrollbar styling */
+.dipartmentsList::-webkit-scrollbar {
+    height: 8px; /* Sets the height of the scrollbar */
+}
+
+.dipartmentsList::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Track background color */
+    border-radius: 10px; /* Round corners */
+}
+
+.dipartmentsList::-webkit-scrollbar-thumb {
+    background-color: #c0c0ff; /* Scrollbar color */
+    border-radius: 10px; /* Round corners */
+    border: 2px solid #f0f0f0; /* Adds some spacing around the thumb */
+}
+
+/* For non-WebKit browsers (optional fallback) */
+.dipartmentsList {
+    scrollbar-width: thin; /* Firefox - makes the scrollbar thinner */
+    scrollbar-color: #c0c0ff #f0f0f0; /* Scrollbar color and track color */
+}
+
 
 
 .dipartmentsList > li {
@@ -91,11 +122,10 @@
 .favoriteButton {
   text-decoration: none;
   background-color: transparent; 
- 
   border: 2px solid transparent; /* Transparent border for a smooth effect */
   padding: 5px 13px;
   margin-left: 2px;
-  font-size: 23px;
+  font-size: 30px;
   font-weight: bold;
   border-radius: 30px;
   cursor: pointer;
@@ -103,12 +133,12 @@
   outline: none; /* Remove outline on focus */
   color:rgb(68, 165, 68);
 }
-.favorite{
+/* .favorite{
   color:rgb(68, 165, 68);
 }
 .download{
   color: rgb(84, 84, 255) !important;
-}
+} */
 .favoriteButton:hover {
   background-color: transparent;
   border: 2px solid #fff; /* White border on hover */

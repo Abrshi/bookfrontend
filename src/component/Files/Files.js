@@ -112,7 +112,8 @@ return (
               </div>
               <div className={styles.detailItem}>
                 <a href={material.file_path} target="_blank" rel="noopener noreferrer" className={`${styles.favoriteButton} dounload`}>
-                <FaFileDownload />
+                <FaFileDownload color="rgb(84, 84, 255)" />
+
                 </a>
                 <button onClick={() => addToFavorite(material, id)} className={`${styles.favoriteButton} favorite`}>
                 <MdBookmarkAdded />
