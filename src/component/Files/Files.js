@@ -84,8 +84,7 @@ const addToFavorite = async (mid, uid) => {
 return (
     <>
     <div className={styles.dipartments}>
-    <h2>Select a Department</h2>
-    {dipartmentslist.length > 0 ? (
+        {dipartmentslist.length > 0 ? (
       <ul className={styles.dipartmentsList}>
         {dipartmentslist.map((dep) => (
           <li key={dep.department_id} onClick={() => setDepartment(dep.department_id)}>

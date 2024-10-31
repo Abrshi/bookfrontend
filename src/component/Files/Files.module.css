@@ -13,6 +13,7 @@
 /* Container for the entire PDF display */
 .fileContainer {
     max-width: 300px;
+    min-width: 300px;
     margin: 20px ;
     padding: 20px;
     border: 1px solid #ddd;
@@ -103,16 +104,20 @@
 
 
 .dipartmentsList > li {
-  border: 1px solid transparent; 
-    padding: 10px; 
-    
+  border: 1px solid #333; 
+  padding: 7px; 
+  border-radius: 5px;
   background-color: transparent; 
-    transition: border-color 0.3s; 
+  transition: border-color 0.3s; 
+  width: fit-content;
+  transition: 350ms;
 }
 
 .dipartmentsList > li:hover {
-  border: 1px solid ; 
-    border-color: #333; 
+    border: 1px solid ; 
+    background-color: #c4c4c4; 
+    border-radius: 10px;
+    color: black;
     cursor: pointer;
 }
 .dipartmentsList > li:active {

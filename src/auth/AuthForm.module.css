@@ -4,8 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f0f4f8;
   padding: 20px;
 }
 
@@ -116,7 +114,6 @@ input:focus {
   font-size: large;
 }
 .mainContent {
-  flex-grow: 1;
   padding: 20px;
   text-align: center;
   /* height: 500px; */
